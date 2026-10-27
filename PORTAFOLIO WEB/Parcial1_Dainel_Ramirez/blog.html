@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bitácora y portafolio de proyectos de diseño, motion y animación de Dainel.">
+    <title>Blog / Bitácora | Dainel</title>
+
+    <link rel="icon" href="logo-marca-personal.jpg" type="image/jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <span class="loader-logo">D.</span>
+            <div class="loader-line">
+                <span></span>
+            </div>
+            <p>CARGANDO PORTAFOLIO</p>
+        </div>
+    </div>
+
+    <!-- Fondo -->
+    <div class="background-effects" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+        <span class="orb orb-4"></span>
+        <span class="grid-background"></span>
+    </div>
+
+    <!-- Navegación -->
+    <header class="header">
+        <nav class="navbar" aria-label="Navegación principal">
+
+            <a href="index.html#inicio" class="logo">
+                <span>D</span>
+                <strong>DAINEL</strong>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="index.html#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="index.html#marca-personal">Marca personal</a>
+                </li>
+
+                <li>
+                    <a href="blog.html" class="active">Proyectos</a>
+                </li>
+
+                <li>
+                    <a href="index.html#sobre-mi">Sobre mí</a>
+                </li>
+
+                <li>
+                    <a href="contacto.html" class="nav-contact">Contacto</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <!-- PROYECTOS -->
+        <section class="projects section" id="proyectos">
+
+            <div class="section-heading reveal">
+
+                <div>
+                    <p class="section-number">01 / BITÁCORA DE PROYECTOS</p>
+
+                    <h1>
+                        Trabajos que
+                        <span>hablan por sí mismos.</span>
+                    </h1>
+                </div>
+
+                <p class="section-intro">
+                    Una selección de proyectos reales de diseño,
+                    motion y edición de video.
+                </p>
+
+            </div>
+
+
+            <!-- FILTROS -->
+            <div class="filters reveal">
+
+                <button class="filter active" data-filter="all">
+                    Todos
+                </button>
+
+                <button class="filter" data-filter="design">
+                    Diseño
+                </button>
+
+                <button class="filter" data-filter="motion">
+                    Motion
+                </button>
+
+                <button class="filter" data-filter="edition">
+                    Edición
+                </button>
+
+                <button class="filter" data-filter="animation">
+                    Animación
+                </button>
+
+            </div>
+
+
+            <!-- Divisor: Jugadores -->
+            <div class="grid-divider reveal" data-category="design">
+                <span>DISEÑO · JUGADORES</span>
+            </div>
+
+            <div class="portrait-grid">
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-real-bayern.jpg" alt="Real Madrid vs Bayern Múnich - Champions League" fetchpriority="high">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño gráfico</span>
+                            <h3>Real Madrid vs Bayern</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-bayern-psg.jpg" alt="Bayern Múnich vs PSG - Road to the Final" fetchpriority="high">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño gráfico</span>
+                            <h3>Bayern vs PSG</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-cristiano.jpg" alt="Cristiano Ronaldo - Portugal Mundial 2026" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño gráfico</span>
+                            <h3>Cristiano · Portugal</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-messi-26.jpg" alt="Lionel Messi - Argentina Mundial 2026" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño gráfico</span>
+                            <h3>Messi · Argentina</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-messi.jpg" alt="Lionel Messi - Legado" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño gráfico</span>
+                            <h3>Messi · Legado</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-neymar.jpg" alt="Neymar - Regreso a Santos FC" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño gráfico</span>
+                            <h3>Neymar · Santos</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-rashford.jpg" alt="Marcus Rashford - FC Barcelona" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño gráfico</span>
+                            <h3>Rashford · Barcelona</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- Divisor: Producto -->
+            <div class="grid-divider grid-divider-separated reveal" data-category="design">
+                <span>DISEÑO · PRODUCTO</span>
+            </div>
+
+            <div class="portrait-grid">
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-nike.jpg" alt="Campaña Nike - Corre más allá de los límites" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño de producto</span>
+                            <h3>Nike · Campaña</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-adidas.jpg" alt="Campaña Adidas Ultraboost" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño de producto</span>
+                            <h3>Adidas · Ultraboost</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+                <article class="project-card project-portrait reveal" data-category="design">
+                    <div class="project-image">
+                        <img src="assets/img/proyecto-chocorramo.jpg" alt="Pieza publicitaria Chocoramo" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Diseño de producto</span>
+                            <h3>Chocoramo</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- GRID: Animación / Edición -->
+            <div class="projects-grid">
+
+                <!-- Divisor: Animación (Motion + Animación) -->
+                <div class="grid-divider reveal" data-category="motion animation">
+                    <span>ANIMACIÓN</span>
+                </div>
+
+                <div class="animation-showcase reveal" data-category="motion animation">
+
+                    <div class="bento-col-wide">
+
+                        <article class="project-card project-large" data-category="motion">
+                            <div class="project-image">
+                                <video data-src="assets/video/motion-camara-log.mp4"
+                                    poster="assets/img/poster-camara-log.jpg" muted
+                                    loop
+                                    playsinline
+                                    preload="none"></video>
+                                <span class="video-play-badge">VIDEO</span>
+                            </div>
+                            <div class="project-info">
+                                <div>
+                                    <span class="project-category">Motion Design</span>
+                                    <h3>Animación cámara · Estilo Log</h3>
+                                </div>
+                                <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                            </div>
+                        </article>
+
+                        <article class="project-card project-large" data-category="motion">
+                            <div class="project-image">
+                                <video data-src="assets/video/motion-caja-adidas-messi.mp4"
+                                    poster="assets/img/poster-caja-adidas.jpg" muted
+                                    loop
+                                    playsinline
+                                    preload="none"></video>
+                                <span class="video-play-badge">VIDEO</span>
+                            </div>
+                            <div class="project-info">
+                                <div>
+                                    <span class="project-category">Motion Design</span>
+                                    <h3>Caja Adidas x Messi</h3>
+                                </div>
+                                <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <article class="project-card bento-tall" data-category="animation">
+                        <div class="project-image">
+                            <video data-src="assets/video/animacion-logo-vertical.mp4"
+                                poster="assets/img/poster-logo-vertical.jpg" muted
+                                loop
+                                playsinline
+                                preload="none"></video>
+                            <span class="video-play-badge">VIDEO</span>
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <span class="project-category">Animación</span>
+                                <h3>Animación de logo</h3>
+                            </div>
+                            <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                        </div>
+                    </article>
+
+                    <article class="project-card bento-tall" data-category="animation">
+                        <div class="project-image">
+                            <video data-src="assets/video/animacion-anuncios-ia.mp4"
+                                poster="assets/img/poster-anuncios-ia.jpg" muted
+                                loop
+                                playsinline
+                                preload="none"></video>
+                            <span class="video-play-badge">VIDEO</span>
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <span class="project-category">Animación</span>
+                                <h3>Anuncios con IA</h3>
+                            </div>
+                            <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                        </div>
+                    </article>
+
+                </div>
+
+
+                <!-- Divisor: Edición -->
+                <div class="grid-divider grid-divider-separated reveal" data-category="edition">
+                    <span>EDICIÓN DE VIDEO</span>
+                </div>
+
+                <article class="project-card project-video-vertical reveal" data-category="edition">
+                    <div class="project-image">
+                        <video data-src="assets/video/edicion-curvas-de-movimiento.mp4"
+                            poster="assets/img/poster-curvas.jpg" muted
+                            loop
+                            playsinline
+                            preload="none"></video>
+                        <span class="video-play-badge">VIDEO</span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <span class="project-category">Edición de video</span>
+                            <h3>Curvas de movimiento</h3>
+                        </div>
+                        <button class="project-arrow" aria-label="Ver proyecto">↗</button>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div>
+                <a href="index.html#inicio" class="logo">
+                    <span>D</span>
+                    <strong>DAINEL</strong>
+                </a>
+
+                <p>
+                    Diseño · Animación · Creatividad
+                </p>
+            </div>
+
+            <nav aria-label="Navegación del pie de página">
+
+                <a href="index.html#inicio">Inicio</a>
+                <a href="index.html#marca-personal">Marca personal</a>
+                <a href="blog.html">Proyectos</a>
+                <a href="index.html#sobre-mi">Sobre mí</a>
+                <a href="contacto.html">Contacto</a>
+
+            </nav>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Dainel. Todos los derechos reservados.
+            </span>
+
+            <span>
+                Diseñado & desarrollado con creatividad.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
