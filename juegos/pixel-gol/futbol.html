@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b14" data-light="#eceef7">
+<title>PIXEL GOL — Fútbol 2D estilo Atari</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="../../js/theme.js"></script>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../../juegos.html">◀ Juegos</a>
+  <button class="theme-btn" type="button" data-theme-toggle aria-label="Activar modo claro" aria-pressed="false"><span class="moon" aria-hidden="true">☾</span><span class="sun" aria-hidden="true">☀</span></button>
+  <h1>PIXEL <span>GOL</span></h1>
+  <p class="sub">Fútbol 2D estilo Atari · 1 jugador vs IA o 2 jugadores</p>
+</header>
+
+<main>
+  <section class="console">
+    <div class="screen-wrap" id="wrap">
+      <canvas id="screen" width="320" height="200" aria-label="Pantalla del juego"></canvas>
+      <div class="scanlines"></div>
+
+      <!-- Menú -->
+      <div class="overlay" id="menu">
+        <div class="box">
+          <div class="row"><label>Modo</label>
+            <div class="seg"><button data-set="mode" data-val="1P">1 jugador vs IA</button><button data-set="mode" data-val="2P">2 jugadores</button></div></div>
+          <div class="row only1p"><label>IA</label>
+            <div class="seg"><button data-set="level" data-val="facil">Fácil</button><button data-set="level" data-val="normal">Normal</button><button data-set="level" data-val="dificil">Difícil</button></div></div>
+          <div class="row"><label>Goles</label>
+            <div class="seg"><button data-set="target" data-val="3">3</button><button data-set="target" data-val="5">5</button><button data-set="target" data-val="7">7</button></div></div>
+          <div class="row"><label>Tiempo</label>
+            <div class="seg"><button data-set="minutes" data-val="2">2 min</button><button data-set="minutes" data-val="3">3 min</button><button data-set="minutes" data-val="5">5 min</button></div></div>
+          <button class="big" id="btnPlay">▶ JUGAR</button>
+          <button class="ghost" id="btnSound">Sonido: Sí</button>
+        </div>
+      </div>
+
+      <!-- Pausa -->
+      <div class="overlay clear" id="pause" hidden>
+        <div class="box small">
+          <button class="big" id="btnResume">▶ CONTINUAR</button>
+          <button class="ghost" id="btnQuit">Salir al menú</button>
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="overlay" id="result" hidden>
+        <div class="box">
+          <h2 id="resTitle">FIN</h2>
+          <div class="score" id="resScore"></div>
+          <ul class="news" id="resNews"></ul>
+          <button class="big" id="btnAgain">↻ REVANCHA</button>
+          <button class="ghost" id="btnMenu">Menú</button>
+        </div>
+      </div>
+
+      <!-- Controles táctiles -->
+      <div class="stick s1" id="stick1"><div class="knob"></div><span>P1</span></div>
+      <div class="stick s2" id="stick2"><div class="knob"></div><span>P2</span></div>
+      <button class="tpause" id="btnPauseTouch" aria-label="Pausa">II</button>
+    </div>
+    <p class="rotate">↻ Gira el teléfono en horizontal para ver la cancha más grande</p>
+  </section>
+
+  <section class="panels">
+    <article class="card">
+      <h3>Cómo jugar</h3>
+      <table class="keys">
+        <tr><td><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></td><td>Mueve a <b class="c1">P1</b> (en modo 1 jugador también sirven las flechas)</td></tr>
+        <tr><td><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></td><td>Mueve a <b class="c2">P2</b> en modo 2 jugadores</td></tr>
+        <tr><td><kbd>Espacio</kbd></td><td>Pausa / continuar</td></tr>
+        <tr><td>Teléfono</td><td>Joystick en pantalla (uno por jugador en modo 2P) y botón <b>II</b> para pausar</td></tr>
+      </table>
+      <p>Toca el balón con tu jugador para patearlo: sale en la dirección del contacto y de tu carrera. El balón rebota en las bandas, el fondo y los postes, y <b>cada toque lo acelera</b> (mira la barra VEL). Los arqueros se mueven solos. Gana quien llegue primero a los goles elegidos o quien vaya ganando cuando acabe el tiempo; si hay empate, se juega un <b>gol de oro</b>.</p>
+    </article>
+
+    <article class="card">
+      <h3>Récords</h3>
+      <div class="rec-grid" id="recGrid"></div>
+      <h4>Historial</h4>
+      <ul class="hist" id="histList"></ul>
+      <div class="actions">
+        <button class="ghost" id="btnJson">Ver JSON</button>
+        <button class="ghost" id="btnDownload">Descargar JSON</button>
+        <button class="danger" id="btnReset">Reiniciar récords</button>
+      </div>
+      <pre class="json" id="jsonBox" hidden></pre>
+    </article>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script src="js/game.js"></script>
+</body>
+</html>
