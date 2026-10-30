@@ -186,19 +186,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
     }
+    // Fondo del menú al hacer scroll: se cambia con una clase para que
+    // respete los colores del modo oscuro / claro (variables CSS).
     const navbar =
         document.querySelector(".navbar");
     window.addEventListener(
         "scroll",
         () => {
             if (!navbar) return;
-            if (window.scrollY > 50) {
-                navbar.style.background =
-                    "rgba(8,8,11,.85)";
-            } else {
-                navbar.style.background =
-                    "rgba(10,10,13,.65)";
-            }
+            navbar.classList.toggle(
+                "scrolled",
+                window.scrollY > 50
+            );
         },
         {
             passive: true
