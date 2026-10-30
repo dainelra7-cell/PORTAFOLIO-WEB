@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>DEADZONE — Undead Protocol</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="c"></canvas>
+
+  <!-- ======================= HUD ======================= -->
+  <div id="hud" class="hidden">
+    <div id="dmg-vignette"></div>
+    <div id="lowhp"></div>
+    <div id="dmg-dir"></div>
+    <div id="flash"></div>
+
+    <div id="round-box">
+      <div id="round-num">0</div>
+      <div class="round-meta">
+        <div id="round-label">RONDA</div>
+        <div id="zleft">—</div>
+        <div id="wave-state"></div>
+      </div>
+    </div>
+    <div id="zone-name"></div>
+
+    <div id="bossbar" class="hidden"><div id="bossname">EL COLOSO</div><div class="bosstrack"><div id="bossfill"></div></div></div>
+
+    <div id="health-box">
+      <div class="hrow"><span class="hlabel">SALUD</span><span id="htext">100</span></div>
+      <div id="hbar"><div id="hfill"></div><div id="hregen"></div></div>
+      <div id="stamina"><div id="sfill"></div></div>
+      <div id="perks"></div>
+    </div>
+
+    <div id="points-box">
+      <div id="points">500</div>
+      <div class="plabel">PUNTOS</div>
+      <div id="popups"></div>
+    </div>
+
+    <div id="weapon-box">
+      <div id="wslots"></div>
+      <div id="wname">P-17 GUARDIANA</div>
+      <div id="wlevel"></div>
+      <div id="ammo"><span id="mag">8</span><span id="res">/ 72</span></div>
+      <div id="reloadbar"><div id="reloadfill"></div></div>
+      <div id="ammo-warn"></div>
+    </div>
+
+    <div id="crosshair"><i class="t"></i><i class="b"></i><i class="l"></i><i class="r"></i><b></b></div>
+    <div id="hitmarker"></div>
+    <div id="combo"></div>
+    <div id="banner"><div id="banner-top"></div><div id="banner-main"></div><div id="banner-sub"></div></div>
+    <div id="toast"></div>
+    <div id="wpops"></div>
+    <div id="medals"></div>
+    <div id="power-timers"></div>
+    <div id="power-banner"><div id="pb-name"></div><div id="pb-desc"></div></div>
+
+    <div id="interact" class="hidden">
+      <div id="ia-title"></div>
+      <div id="ia-desc"></div>
+      <div id="ia-stats"></div>
+      <div class="ia-foot"><span id="ia-cost"></span><span id="ia-status"></span></div>
+    </div>
+    <button id="pause-btn" aria-label="Pausa">II</button>
+  </div>
+
+  <!-- ======================= CONTROLES TÁCTILES ======================= -->
+  <div id="touch">
+    <div id="stick"><div id="knob"></div></div>
+    <div class="tbtn big" data-btn="fire">🔥</div>
+    <div class="tbtn" data-btn="ads">◎</div>
+    <div class="tbtn" data-btn="reload">R</div>
+    <div class="tbtn" data-btn="jump">⤒</div>
+    <div class="tbtn" data-btn="interact">E</div>
+    <div class="tbtn" data-btn="swap">⇄</div>
+    <div class="tbtn" data-btn="sprint">»</div>
+    <div class="tbtn" data-btn="melee">✊</div>
+  </div>
+
+  <!-- ======================= MENÚ PRINCIPAL ======================= -->
+  <div id="menu" class="screen">
+    <div class="menu-bg"></div>
+    <div class="menu-inner">
+      <div class="logo">
+        <div class="logo-top">PROTOCOLO DE CONTENCIÓN 7-Ω</div>
+        <h1>DEAD<span>ZONE</span></h1>
+        <div class="logo-sub">UNDEAD PROTOCOL</div>
+      </div>
+      <div class="menu-main" id="menu-main">
+        <button class="mbtn primary" id="btn-play">JUGAR</button>
+        <button class="mbtn" data-panel="p-help">INSTRUCCIONES</button>
+        <button class="mbtn" data-panel="p-medals">MEDALLAS</button>
+        <button class="mbtn" data-panel="p-options">OPCIONES</button>
+        <button class="mbtn" data-panel="p-credits">CRÉDITOS</button>
+        <div id="records"></div>
+      </div>
+
+      <div class="panel hidden" id="p-help">
+        <h2>INSTRUCCIONES</h2>
+        <div class="cols">
+          <div>
+            <h3>Objetivo</h3>
+            <p>Sobrevive todas las rondas que puedas en la instalación abandonada. Gana puntos disparando y eliminando zombis, y gástalos con cabeza: armas, munición, puertas, ventajas o la <b>Forja Omega</b>.</p>
+            <h3>Consejos</h3>
+            <ul>
+              <li>Los disparos a la cabeza hacen más daño y dan más puntos.</li>
+              <li>Encadena eliminaciones rápidas para conseguir bonificaciones.</li>
+              <li>Cada 5 rondas llega una ronda especial. En la 10 aparece <b>EL COLOSO</b>: salta o aléjate de su golpe sísmico y esquiva su embestida.</li>
+              <li>La Forja Omega está en la Sala del Reactor y necesita energía: activa el interruptor.</li>
+              <li>Sólo puedes llevar 2 armas y 3 ventajas.</li>
+              <li>Los zombis sueltan <b>potenciadores</b>: Munición Máxima, Bala Letal, Puntos ×2, Detonación y Frenesí. ¡Recógelos pasando por encima!</li>
+              <li>Gana <b>medallas de batalla</b> con rachas, disparos a la cabeza, bajas múltiples y rondas perfectas. Cada una da puntos extra y queda en tu colección.</li>
+              <li>Todas las armas llevan mira holográfica: apunta con clic derecho.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Teclado y ratón</h3>
+            <table class="keys">
+              <tr><td>W A S D</td><td>Moverse</td></tr>
+              <tr><td>Ratón</td><td>Mirar / apuntar</td></tr>
+              <tr><td>Clic izq.</td><td>Disparar</td></tr>
+              <tr><td>Clic der.</td><td>Apuntar con la mira</td></tr>
+              <tr><td>R</td><td>Recargar</td></tr>
+              <tr><td>Shift</td><td>Correr</td></tr>
+              <tr><td>Espacio</td><td>Saltar</td></tr>
+              <tr><td>E</td><td>Comprar / abrir / usar</td></tr>
+              <tr><td>1 · 2 · Q · rueda</td><td>Cambiar de arma</td></tr>
+              <tr><td>V · F · botón central</td><td>Culatazo (cuerpo a cuerpo)</td></tr>
+              <tr><td>Esc · P</td><td>Pausa</td></tr>
+            </table>
+            <h3>Pantalla táctil</h3>
+            <p>Joystick a la izquierda (empújalo a fondo para correr), arrastra a la derecha para mirar, y usa los botones para disparar, apuntar, recargar, saltar, interactuar (E) y cambiar de arma.</p>
+          </div>
+        </div>
+        <button class="mbtn back">VOLVER</button>
+      </div>
+
+      <div class="panel hidden" id="p-medals">
+        <h2>MEDALLAS DE BATALLA</h2>
+        <div id="medal-count"></div>
+        <div id="medal-grid" class="mgrid"></div>
+        <button class="mbtn back">VOLVER</button>
+      </div>
+
+      <div class="panel hidden" id="p-options">
+        <h2>OPCIONES</h2>
+        <div class="opts">
+          <label>Volumen general <input type="range" id="o-master" min="0" max="1" step="0.05"><span></span></label>
+          <label>Efectos <input type="range" id="o-sfx" min="0" max="1" step="0.05"><span></span></label>
+          <label>Ambiente <input type="range" id="o-amb" min="0" max="1" step="0.05"><span></span></label>
+          <label>Sensibilidad <input type="range" id="o-sens" min="0.2" max="3" step="0.05"><span></span></label>
+          <label>Campo de visión <input type="range" id="o-fov" min="60" max="100" step="1"><span></span></label>
+          <label>Calidad visual
+            <select id="o-quality"><option value="0">Baja</option><option value="1">Media</option><option value="2">Alta</option></select><span></span></label>
+          <label class="chk"><input type="checkbox" id="o-invert"> Invertir eje vertical</label>
+        </div>
+        <button class="mbtn back">VOLVER</button>
+      </div>
+
+      <div class="panel hidden" id="p-credits">
+        <h2>CRÉDITOS</h2>
+        <p class="credits">
+          <b>DEADZONE — UNDEAD PROTOCOL</b><br>
+          Prototipo de shooter de supervivencia por rondas.<br><br>
+          Diseño, programación y arte procedural: <b>Dainel Ramirez</b>.<br>
+          Motor gráfico: Three.js r158 (licencia MIT).<br>
+          Sonido: sintetizado en tiempo real con Web Audio API.<br><br>
+          Todos los mapas, armas, nombres y modelos son originales.<br>
+          Inspirado en la idea general de los modos de supervivencia por rondas.
+        </p>
+        <button class="mbtn back">VOLVER</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= PAUSA ======================= -->
+  <div id="pause" class="screen hidden">
+    <div class="menu-inner small">
+      <h2>PAUSA</h2>
+      <div id="pause-stats"></div>
+      <button class="mbtn primary" id="btn-resume">CONTINUAR</button>
+      <button class="mbtn" id="btn-pause-opts">OPCIONES</button>
+      <button class="mbtn" id="btn-restart">REINICIAR PARTIDA</button>
+      <button class="mbtn" id="btn-quit">SALIR AL MENÚ</button>
+    </div>
+  </div>
+
+  <!-- ======================= DERROTA ======================= -->
+  <div id="gameover" class="screen hidden">
+    <div class="menu-inner small">
+      <div class="go-title">HAS CAÍDO</div>
+      <div class="go-sub">La horda ha tomado la instalación</div>
+      <div id="go-stats"></div>
+      <div id="go-record"></div>
+      <div class="go-mtitle">MEDALLAS DE LA PARTIDA</div>
+      <div id="go-medals" class="mgrid small"></div>
+      <button class="mbtn primary" id="btn-retry">VOLVER A INTENTARLO</button>
+      <button class="mbtn" id="btn-go-menu">MENÚ PRINCIPAL</button>
+    </div>
+  </div>
+
+  <div id="rotate-hint">Gira el teléfono en horizontal para jugar</div>
+  <div id="click-hint" class="hidden">Haz clic para continuar</div>
+</div>
+
+<!-- Three.js local (r158) — funciona sin internet -->
+<script src="lib/three.min.js"></script>
+<script src="src/config.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/input.js"></script>
+<script src="src/map.js"></script>
+<script src="src/effects.js"></script>
+<script src="src/player.js"></script>
+<script src="src/weapons.js"></script>
+<script src="src/zombies.js"></script>
+<script src="src/economy.js"></script>
+<script src="src/waves.js"></script>
+<script src="src/shop.js"></script>
+<script src="src/powerups.js"></script>
+<script src="src/medals.js"></script>
+<script src="src/ui.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
