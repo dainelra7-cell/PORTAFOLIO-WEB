@@ -58,6 +58,10 @@
                 side: m.doubleSided ? T.DoubleSide : T.FrontSide,
             });
             if (p.baseColorFactor) { mat.color.setRGB(...p.baseColorFactor.slice(0, 3)); }
+            if (m.emissiveFactor) {
+                const k = (m.extensions && m.extensions.KHR_materials_emissive_strength && m.extensions.KHR_materials_emissive_strength.emissiveStrength) || 1;
+                mat.emissive.setRGB(...m.emissiveFactor); mat.emissiveIntensity = k;
+            }
             if (p.baseColorTexture) tareas.push(textura(p.baseColorTexture, true).then((t) => { mat.map = t; }));
             if (p.metallicRoughnessTexture) tareas.push(textura(p.metallicRoughnessTexture, false).then((t) => { mat.metalnessMap = t; mat.roughnessMap = t; }));
             if (m.normalTexture) tareas.push(textura(m.normalTexture, false).then((t) => {
@@ -145,6 +149,9 @@
     }
 
     /* ---------- Ventana ---------- */
+    // El visor de objetos (visor3d.js) usa este lector para modelos con varias piezas
+    window.Visor3D.cargarCompleto = async (url, onProgreso) => (await cargarAnimado(url, onProgreso)).raiz;
+
     let modal = null;
     function crearModal() {
         const d = document.createElement('dialog');

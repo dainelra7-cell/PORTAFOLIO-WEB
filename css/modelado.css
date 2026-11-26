@@ -97,3 +97,15 @@ html.anim-abierto{overflow:hidden}
   .anim-lista button{width:auto;flex:0 0 auto;grid-template-columns:auto auto;padding:11px 14px}
   .anim-lista .dur{display:none}
 }
+
+/* ---------- Objeto del personaje (visor pequeño 360°) ---------- */
+.objeto{margin-top:22px;display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:center;padding:12px;border:1px solid var(--border);border-radius:20px;background:var(--surface)}
+.visor3d--objeto{aspect-ratio:1/1;border-radius:14px}
+.visor3d--objeto .visor3d-controles{right:8px;bottom:8px}
+.visor3d--objeto .visor3d-controles button{width:30px;height:30px;border-radius:9px}
+.visor3d--objeto .visor3d-controles svg{width:13px;height:13px}
+.visor3d--objeto .visor3d-barra{width:80px}
+.objeto-info .rol{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--c);text-transform:uppercase}
+.objeto-info h3{margin-top:6px;font-size:20px;font-weight:800;letter-spacing:-.02em}
+.objeto-info p:last-child{margin-top:6px;font-size:13px;line-height:1.5;color:var(--text-soft)}
+@media (max-width:480px){.objeto{grid-template-columns:110px 1fr;gap:14px}}

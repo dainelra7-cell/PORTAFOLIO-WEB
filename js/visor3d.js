@@ -178,7 +178,7 @@
             renderer = new T.WebGLRenderer({ canvas: lienzo, antialias: true, alpha: true, powerPreference: 'high-performance' });
         } catch (e) {
             el.classList.add('visor3d--error');
-            if (estado) estado.querySelector('p').textContent = 'Tu navegador no tiene WebGL activado.';
+            if (estado && estado.querySelector('p')) estado.querySelector('p').textContent = 'Tu navegador no tiene WebGL activado.';
             return;
         }
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -297,8 +297,18 @@
         };
         requestAnimationFrame(dibujar);
 
-        cargarGLB(url, (p) => { if (barra) barra.style.width = Math.round(p * 100) + '%'; })
+        const progresoCarga = (p) => { if (barra) barra.style.width = Math.round(p * 100) + '%'; };
+        // data-completo: modelos con varias piezas y materiales (objetos de los personajes)
+        const cargar = ('completo' in el.dataset && window.Visor3D.cargarCompleto)
+            ? window.Visor3D.cargarCompleto(url, progresoCarga)
+            : cargarGLB(url, progresoCarga);
+        cargar
             .then((malla) => {
+                if (el.dataset.inclinar) {   // p. ej. la espada se muestra en diagonal
+                    const g = new T.Group(); g.add(malla);
+                    malla.rotation.z = parseFloat(el.dataset.inclinar) * Math.PI / 180;
+                    malla = g; malla.updateMatrixWorld(true);
+                }
                 const caja = new T.Box3().setFromObject(malla);
                 const tam = caja.getSize(new T.Vector3());
                 const centro = caja.getCenter(new T.Vector3());
@@ -317,7 +327,7 @@
             .catch((err) => {
                 console.error(err);
                 el.classList.add('visor3d--error');
-                if (estado) estado.querySelector('p').textContent = 'No se pudo cargar el modelo.';
+                if (estado && estado.querySelector('p')) estado.querySelector('p').textContent = 'No se pudo cargar el modelo.';
             });
     }
 
