@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modelado 3D de Dainel: RYU, ZIPPY y SPECTER, personajes modelados y texturizados en Blender que puedes girar 360°.">
+    <title>Modelado 3D | Dainel</title>
+
+    <link rel="icon" href="logo-marca-personal.jpg" type="image/jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modelado.css">
+    <script src="js/theme.js"></script>
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <span class="loader-logo">D.</span>
+            <div class="loader-line">
+                <span></span>
+            </div>
+            <p>CARGANDO PORTAFOLIO</p>
+        </div>
+    </div>
+
+    <!-- Fondo -->
+    <div class="background-effects" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+        <span class="orb orb-4"></span>
+        <span class="grid-background"></span>
+    </div>
+
+    <!-- Navegación -->
+    <header class="header">
+        <nav class="navbar" aria-label="Navegación principal">
+
+            <a href="index.html#inicio" class="logo">
+                <span>D</span>
+                <strong>DAINEL</strong>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="index.html#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="index.html#marca-personal">Marca personal</a>
+                </li>
+
+                <li>
+                    <a href="blog.html">Proyectos</a>
+                </li>
+
+                <li>
+                    <a href="juegos.html">Juegos</a>
+                </li>
+
+                <li>
+                    <a href="modelado-3d.html" class="active">Modelado 3D</a>
+                </li>
+
+                <li>
+                    <a href="index.html#sobre-mi">Sobre mí</a>
+                </li>
+
+                <li>
+                    <a href="contacto.html" class="nav-contact">Contacto</a>
+                </li>
+            </ul>
+
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo claro" aria-pressed="false">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            </button>
+
+        </nav>
+    </header>
+
+    <main>
+        <!-- MODELADO 3D -->
+        <section class="modelos section" id="modelado-3d">
+
+            <div class="section-heading reveal">
+
+                <div>
+                    <p class="section-number">03 / MODELADO 3D</p>
+
+                    <h1>
+                        Personajes que
+                        <span>giran 360°.</span>
+                    </h1>
+                </div>
+
+                <p class="section-intro">
+                    Tríada de personajes modelados, texturizados y
+                    animados en Blender. Arrastra cada modelo para
+                    verlo desde cualquier ángulo.
+                </p>
+
+            </div>
+
+            <nav class="modelos-nav reveal" aria-label="Personajes">
+                <a href="#ryu" style="--c:#79C24A">RYU</a>
+                <a href="#zippy" style="--c:#ECB703">ZIPPY</a>
+                <a href="#specter" style="--c:#E0302A">SPECTER</a>
+            </nav>
+
+                <!-- RYU -->
+                <article class="personaje reveal" id="ryu" style="--c:#79C24A">
+                    <div class="visor3d" data-modelo="assets/modelos/ryu.glb" data-etiqueta="Modelo 3D de RYU, se puede girar arrastrando">
+                        <span class="visor3d-etiqueta">RYU · 360°</span>
+                        <div class="visor3d-estado">
+                            <div class="visor3d-barra"><span></span></div>
+                            <p>CARGANDO MODELO</p>
+                        </div>
+                        <span class="visor3d-ayuda">↔ Arrastra para girar</span>
+                        <div class="visor3d-controles">
+                            <button type="button" data-accion="auto" aria-label="Pausar o activar el giro automático" aria-pressed="true">
+                                <svg class="ico-pausa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                                <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z"/></svg>
+                            </button>
+                            <button type="button" data-accion="reiniciar" aria-label="Volver a la vista inicial" title="Vista inicial">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="personaje-info">
+                        <p class="rol">Personaje · Héroe</p>
+                        <h2>RYU</h2>
+                        <p class="desc">Experimento bio-cibernético que escapó de HELIX Corp. Criatura anfibia con espíritu ninja: chaqueta con capucha, short táctico y vendajes. Telas mate con detalles verdes y dorados que lo hacen legible incluso en penumbra.</p>
+                        <div class="paleta" role="img" aria-label="Paleta de color"><span style="background:#101412" title="#101412"></span><span style="background:#303E34" title="#303E34"></span><span style="background:#6A8E4B" title="#6A8E4B"></span><span style="background:#579E51" title="#579E51"></span><span style="background:#D4A00C" title="#D4A00C"></span><span style="background:#E0D7C1" title="#E0D7C1"></span></div>
+                        <dl class="ficha">
+                            <div><dt>Triángulos</dt><dd>50 000</dd></div>
+                            <div><dt>Texturas</dt><dd>Color · Normal (2K)</dd></div>
+                            <div><dt>Software</dt><dd>Blender 5.2</dd></div>
+                            <div><dt>Render</dt><dd>PBR · EEVEE</dd></div>
+                        </dl>
+
+                        <button type="button" class="btn btn-anim" data-animaciones="assets/modelos/ryu_animado.glb" data-nombre="RYU" data-color="#79C24A" data-raiz="Hips">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z"/></svg>
+                            Ver animaciones <small>6</small>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- ZIPPY -->
+                <article class="personaje reveal" id="zippy" style="--c:#ECB703">
+                    <div class="visor3d" data-modelo="assets/modelos/zippy.glb" data-etiqueta="Modelo 3D de ZIPPY, se puede girar arrastrando">
+                        <span class="visor3d-etiqueta">ZIPPY · 360°</span>
+                        <div class="visor3d-estado">
+                            <div class="visor3d-barra"><span></span></div>
+                            <p>CARGANDO MODELO</p>
+                        </div>
+                        <span class="visor3d-ayuda">↔ Arrastra para girar</span>
+                        <div class="visor3d-controles">
+                            <button type="button" data-accion="auto" aria-label="Pausar o activar el giro automático" aria-pressed="true">
+                                <svg class="ico-pausa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                                <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z"/></svg>
+                            </button>
+                            <button type="button" data-accion="reiniciar" aria-label="Volver a la vista inicial" title="Vista inicial">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="personaje-info">
+                        <p class="rol">Personaje · Amigo</p>
+                        <h2>ZIPPY</h2>
+                        <p class="desc">Robot felino cuadrúpedo, compañero leal de laboratorio. Carcasa de metal oscuro con paneles dorados y ópticas amarillas: el dorado comunica calidez y lealtad dentro de una paleta tecnológica.</p>
+                        <div class="paleta" role="img" aria-label="Paleta de color"><span style="background:#070707" title="#070707"></span><span style="background:#232322" title="#232322"></span><span style="background:#3C3B3A" title="#3C3B3A"></span><span style="background:#694D15" title="#694D15"></span><span style="background:#C79A1B" title="#C79A1B"></span><span style="background:#ECB703" title="#ECB703"></span></div>
+                        <dl class="ficha">
+                            <div><dt>Triángulos</dt><dd>50 000</dd></div>
+                            <div><dt>Texturas</dt><dd>Color · Normal · Metal/Rugosidad (2K)</dd></div>
+                            <div><dt>Software</dt><dd>Blender 5.2</dd></div>
+                            <div><dt>Render</dt><dd>PBR · EEVEE</dd></div>
+                        </dl>
+
+                        <button type="button" class="btn btn-anim" data-animaciones="assets/modelos/zippy_animado.glb" data-nombre="ZIPPY" data-color="#ECB703" data-raiz="Espalda">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z"/></svg>
+                            Ver animaciones <small>4</small>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- SPECTER -->
+                <article class="personaje reveal" id="specter" style="--c:#E0302A">
+                    <div class="visor3d" data-modelo="assets/modelos/specter.glb" data-etiqueta="Modelo 3D de SPECTER, se puede girar arrastrando">
+                        <span class="visor3d-etiqueta">SPECTER · 360°</span>
+                        <div class="visor3d-estado">
+                            <div class="visor3d-barra"><span></span></div>
+                            <p>CARGANDO MODELO</p>
+                        </div>
+                        <span class="visor3d-ayuda">↔ Arrastra para girar</span>
+                        <div class="visor3d-controles">
+                            <button type="button" data-accion="auto" aria-label="Pausar o activar el giro automático" aria-pressed="true">
+                                <svg class="ico-pausa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                                <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z"/></svg>
+                            </button>
+                            <button type="button" data-accion="reiniciar" aria-label="Volver a la vista inicial" title="Vista inicial">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="personaje-info">
+                        <p class="rol">Personaje · Antagonista</p>
+                        <h2>SPECTER</h2>
+                        <p class="desc">Unidad de cacería de HELIX Corp creada para eliminar “anomalías”. Máscara blanca con óptica roja y ropa urbana gris: el rojo es el único acento sobre una base fría y desaturada.</p>
+                        <div class="paleta" role="img" aria-label="Paleta de color"><span style="background:#0F0D0F" title="#0F0D0F"></span><span style="background:#262528" title="#262528"></span><span style="background:#533337" title="#533337"></span><span style="background:#660C14" title="#660C14"></span><span style="background:#AE060A" title="#AE060A"></span><span style="background:#C5C1C1" title="#C5C1C1"></span></div>
+                        <dl class="ficha">
+                            <div><dt>Triángulos</dt><dd>49 984</dd></div>
+                            <div><dt>Texturas</dt><dd>Color · Normal · Metal/Rugosidad (2K)</dd></div>
+                            <div><dt>Software</dt><dd>Blender 5.2</dd></div>
+                            <div><dt>Render</dt><dd>PBR · EEVEE</dd></div>
+                        </dl>
+
+                        <button type="button" class="btn btn-anim" data-animaciones="assets/modelos/specter_animado.glb" data-nombre="SPECTER" data-color="#E0302A" data-raiz="Hips">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z"/></svg>
+                            Ver animaciones <small>8</small>
+                        </button>
+                    </div>
+                </article>
+
+            <p class="games-note reveal">
+                Arrastra para girar · rueda del ratón o pellizco para acercar ·
+                doble clic para volver a la vista inicial.
+            </p>
+
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div>
+                <a href="index.html#inicio" class="logo">
+                    <span>D</span>
+                    <strong>DAINEL</strong>
+                </a>
+
+                <p>
+                    Diseño · Animación · Creatividad
+                </p>
+            </div>
+
+            <nav aria-label="Navegación del pie de página">
+
+                <a href="index.html#inicio">Inicio</a>
+                <a href="index.html#marca-personal">Marca personal</a>
+                <a href="blog.html">Proyectos</a>
+                <a href="juegos.html">Juegos</a>
+                <a href="modelado-3d.html">Modelado 3D</a>
+                <a href="index.html#sobre-mi">Sobre mí</a>
+                <a href="contacto.html">Contacto</a>
+
+            </nav>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Dainel. Todos los derechos reservados.
+            </span>
+
+            <span>
+                Diseñado & desarrollado con creatividad.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="js/lib/three.min.js"></script>
+    <script src="js/visor3d.js"></script>
+    <script src="js/visor-animaciones.js"></script>
+
+</body>
+</html>

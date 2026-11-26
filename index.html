@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=4">
     <script src="js/theme.js"></script>
 </head>
 
@@ -71,6 +71,10 @@
                 </li>
 
                 <li>
+                    <a href="modelado-3d.html">Modelado 3D</a>
+                </li>
+
+                <li>
                     <a href="index.html#sobre-mi">Sobre mí</a>
                 </li>
 
@@ -93,13 +97,13 @@
 
             <div class="hero-content reveal">
 
-                <p class="eyebrow">
+                <p class="eyebrow" id="eyebrowHero">
                     DISEÑO · ANIMACIÓN · CREATIVIDAD
                 </p>
 
-                <h1>
+                <h1 id="tituloPrincipal">
                     Hola, soy
-                    <span>Dainel.</span>
+                    <span id="tituloDestacado">Dainel.</span>
                 </h1>
 
                 <h2>
@@ -124,6 +128,12 @@
                     <a href="contacto.html" class="btn btn-secondary">
                         Contactarme
                     </a>
+
+                    <!-- Clase 08: botón dinámico controlado por js/main.js -->
+                    <button type="button" class="btn btn-interactivo" id="btnInteractivo" aria-pressed="false">
+                        Modo interactivo
+                        <span aria-hidden="true">✦</span>
+                    </button>
 
                 </div>
 
@@ -450,6 +460,102 @@
             </div>
 
         </section>
+        <!-- SOFTWARE -->
+        <section class="software section" id="software">
+
+            <div class="section-heading reveal">
+                <div>
+                    <p class="section-number">03 / SOFTWARE</p>
+                    <h2>
+                        Mis
+                        <span>herramientas.</span>
+                    </h2>
+                </div>
+                <p class="section-intro">
+                    Los programas con los que doy vida a cada
+                    proyecto y mi nivel actual en cada uno.
+                </p>
+            </div>
+
+            <div class="software-grid">
+                <article class="software-card reveal" style="--c:#ff9a00;--i:0" data-nivel="70">
+                    <div class="software-top">
+                        <span class="software-logo">
+                            <img src="assets/img/software/illustrator.png" alt="Logo de Illustrator" width="44" height="44" loading="lazy">
+                        </span>
+                        <span class="software-porcentaje"><b class="software-num">0</b>%</span>
+                    </div>
+                    <h3>Illustrator</h3>
+                    <p>Vectores e ilustración</p>
+                    <div class="software-barra" role="progressbar" aria-label="Nivel en Illustrator" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+                        <span class="software-relleno"></span>
+                    </div>
+                    <span class="software-nivel">Intermedio</span>
+                </article>
+
+                <article class="software-card reveal" style="--c:#9999ff;--i:1" data-nivel="65">
+                    <div class="software-top">
+                        <span class="software-logo">
+                            <img src="assets/img/software/premiere.png" alt="Logo de Premiere Pro" width="44" height="44" loading="lazy">
+                        </span>
+                        <span class="software-porcentaje"><b class="software-num">0</b>%</span>
+                    </div>
+                    <h3>Premiere Pro</h3>
+                    <p>Edición de video</p>
+                    <div class="software-barra" role="progressbar" aria-label="Nivel en Premiere Pro" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65">
+                        <span class="software-relleno"></span>
+                    </div>
+                    <span class="software-nivel">Intermedio</span>
+                </article>
+
+                <article class="software-card reveal" style="--c:#b4a7ff;--i:2" data-nivel="80">
+                    <div class="software-top">
+                        <span class="software-logo">
+                            <img src="assets/img/software/aftereffects.png" alt="Logo de After Effects" width="44" height="44" loading="lazy">
+                        </span>
+                        <span class="software-porcentaje"><b class="software-num">0</b>%</span>
+                    </div>
+                    <h3>After Effects</h3>
+                    <p>Motion graphics</p>
+                    <div class="software-barra" role="progressbar" aria-label="Nivel en After Effects" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
+                        <span class="software-relleno"></span>
+                    </div>
+                    <span class="software-nivel">Avanzado</span>
+                </article>
+
+                <article class="software-card reveal" style="--c:#31a8ff;--i:3" data-nivel="70">
+                    <div class="software-top">
+                        <span class="software-logo">
+                            <img src="assets/img/software/photoshop.png" alt="Logo de Photoshop" width="44" height="44" loading="lazy">
+                        </span>
+                        <span class="software-porcentaje"><b class="software-num">0</b>%</span>
+                    </div>
+                    <h3>Photoshop</h3>
+                    <p>Edición de imagen</p>
+                    <div class="software-barra" role="progressbar" aria-label="Nivel en Photoshop" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+                        <span class="software-relleno"></span>
+                    </div>
+                    <span class="software-nivel">Intermedio</span>
+                </article>
+
+                <article class="software-card reveal" style="--c:#ea7600;--i:4" data-nivel="25">
+                    <div class="software-top">
+                        <span class="software-logo software-logo--libre">
+                            <img src="assets/img/software/blender.png" alt="Logo de Blender" width="44" height="44" loading="lazy">
+                        </span>
+                        <span class="software-porcentaje"><b class="software-num">0</b>%</span>
+                    </div>
+                    <h3>Blender</h3>
+                    <p>Modelado 3D</p>
+                    <div class="software-barra" role="progressbar" aria-label="Nivel en Blender" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25">
+                        <span class="software-relleno"></span>
+                    </div>
+                    <span class="software-nivel">Básico</span>
+                </article>
+
+            </div>
+
+        </section>
         <!-- NEWSLETTER -->
         <section class="newsletter section reveal">
 
@@ -486,7 +592,7 @@
         <section class="cta section reveal">
 
             <p class="section-number">
-                03 / ¿TRABAJAMOS JUNTOS?
+                04 / ¿TRABAJAMOS JUNTOS?
             </p>
 
             <h2>
@@ -530,6 +636,7 @@
                 <a href="index.html#marca-personal">Marca personal</a>
                 <a href="blog.html">Proyectos</a>
                 <a href="juegos.html">Juegos</a>
+                <a href="modelado-3d.html">Modelado 3D</a>
                 <a href="index.html#sobre-mi">Sobre mí</a>
                 <a href="contacto.html">Contacto</a>
 
@@ -553,6 +660,8 @@
 
 
     <script src="script.js"></script>
+    <!-- Clase 08: primer script interactivo (DOM + eventos) -->
+    <script src="js/main.js?v=4"></script>
 
 </body>
 </html>
