@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (loader) {
                 loader.classList.add("loaded");
             }
-        }, window.self !== window.top ? 0 : 1500);   // dentro del modo demo no se espera
+        }, 1500);
     });
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");

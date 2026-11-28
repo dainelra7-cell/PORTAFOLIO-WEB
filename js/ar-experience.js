@@ -249,8 +249,6 @@
         zona.addEventListener('click', () => { if (!huboArrastre) seleccionar(clave); });
     });
 
-    window.__arDemo = { seleccionar };
-
     $('btnSiguiente').addEventListener('click', () => { if (seleccionado) siguienteAnimacion(seleccionado); });
 
     /* ---------- Cámara orbital con el mouse o el dedo ---------- */
@@ -296,11 +294,7 @@
         }, { passive: false });
         zona.addEventListener('dblclick', () => { yaw = 0; inclinacion = -12; distancia = 6; aplicar(); });
         $('arScene').addEventListener('loaded', aplicar);
-        window.__arOrbita = {
-            aplicar,
-            // usado por el modo demo (demo.html)
-            girarA: (grados, incl, dist) => { yaw = grados; if (incl !== undefined) inclinacion = incl; if (dist !== undefined) distancia = dist; aplicar(); },
-        };
+        window.__arOrbita = { aplicar };
     })();
 
     /* ---------- Giro de pedestales ---------- */
